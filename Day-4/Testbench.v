@@ -1,5 +1,9 @@
+
+// Code your testbench here
+// or browse Examples
 module carry_lookahead_adder_tb;
-reg [3:0]A,B;
+  reg [3:0]A;
+  reg [3:0]B;
 reg Cin;
 wire [3:0]sum;
 wire carry;
@@ -8,7 +12,7 @@ initial
 begin
 $dumpfile("carry_lookahead_adder.vcd");
 $dumpvars(0,carry_lookahead_adder_tb);
-$monitor($time,"A=%b,B=%b,Cin=%b",A,B,Cin,sum,carry);
+  $monitor($time,"A=%b,B=%b,Cin=%b Output sum = %b Carry = %b",A,B,Cin,sum,carry);
 
 #10
 A=4'b0000;
@@ -52,3 +56,4 @@ Cin=1'b1;
 
 #15$finish;
 end
+endmodule
