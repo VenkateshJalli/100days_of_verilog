@@ -17,7 +17,7 @@ module bit4_multiplier_tb(
     #100;
     $display(" 5 * 3 = %d, Product = %b", a * b, p);
     a =  4'b1111; //15
-    b = 4'b0001; 1
+    b = 4'b0001; //1
     #100;
     $display(" 15 * 1 = %d, Product = %b", a * b, p);
     a =  4'b1001; //9
