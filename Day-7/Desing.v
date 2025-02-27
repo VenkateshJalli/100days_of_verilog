@@ -11,5 +11,5 @@ assign xn = ~ x;
 assign yn = ~ y;
 assign a = x & yn;
 assign c = xn & y;
-assign b = ~ ( a | c );
+    assign b = ~ ( x | y );
 endmodule
