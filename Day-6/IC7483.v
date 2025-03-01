@@ -1,4 +1,4 @@
- module IC7483(
+module IC7483(
     input a0,
     input a1,
     input a2,
