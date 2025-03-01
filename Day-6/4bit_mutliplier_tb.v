@@ -1,13 +1,14 @@
 // Code your testbench here
 // or browse Examples
-module bit4_multiplier_tb(
-  reg [3:0] a,
-  reg [3:0] b,
+module bit4_multiplier_tb;
+  reg [3:0] a;
+  reg [3:0] b;
   wire [7:0] p;
   
-  bit4_mutliplier DUT(
-    a,b,p);
+  bit4_multiplier DUT(a,b,p);
   initial begin
+    $dumpfile("multiplier.vcd");
+    $dumpvars(1,bit4_multiplier_tb);
     a =  4'b0011; //3
     b = 4'b0010; //2
     #100;
