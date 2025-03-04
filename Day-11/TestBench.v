@@ -1,11 +1,11 @@
 module hamming_tb;
 
   reg [3:0] transmitted;
-  wire [6:0] encoded;
+  wire [7:1] encoded;
   wire [3:0] decoded;
   wire error;
   wire [2:0] error_loc;
-  reg [7:0] received;
+  reg [7:1] received;
 
   hamming_encoder enc (
     .data_in(transmitted),
@@ -22,15 +22,16 @@ module hamming_tb;
   initial begin
     $dumpfile("Hamming.vcd");
     $dumpvars(1,hamming_tb);
-    repeat(3) begin
-     #25 transmitted = $random;
-      $display("Original Data: %b", transmitted);
+    repeat(4) begin
+      #25 transmitted = $random;
+      #10 received = encoded;
+      #10
+    $display("Original Data: %b", transmitted);
     $display("Encoded Data: %b", encoded);
     $display("Received Data: %b", received);
     $display("Decoded Data: %b", decoded);
     $display("Error Flag: %b, Error Location: %b", error, error_loc);
     end
-
     /*received[5] = ~received[5]; // Introduce a single-bit error
     #10;
     $display("Received Data (with error): %b", received);
