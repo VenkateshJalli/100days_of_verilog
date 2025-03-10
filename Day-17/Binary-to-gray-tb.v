@@ -8,7 +8,7 @@ module tb;
     $dumpvars(1,tb);
     repeat(15) begin
       bi = $random;
-      #25 $display("Time = %0t, Inputs Binary = %b, Outputs Gary = %b",$time,bi,gr);
+      #25 $display("Time = %0t, Inputs Binary = %b, Outputs Gray = %b",$time,bi,gr);
     end
   end 
 endmodule
