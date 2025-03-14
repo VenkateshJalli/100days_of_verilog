@@ -1,5 +1,5 @@
 // Code your design here
-module sr_latch(
+module sr_flipflop(
   input s,r,
   output reg q,qbar
 );
