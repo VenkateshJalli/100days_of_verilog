@@ -3,7 +3,7 @@
 module tb;
   reg s,r;
   wire q,qbar;
-  sr_latch DUT(s,r,q,qbar);
+  sr_flipflop DUT(s,r,q,qbar);
   initial begin
     $dumpfile("sr_latch.vcd");
     $dumpvars(1,tb);
